@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int a,b,c;
-    scanf("%d %d %d ",&a,&b,&c);
-    int mn=0;
+    long long int a,b,c;
+    scanf("%lld %lld %lld ",&a,&b,&c);
+    long long int mn=0;
     if(a<b && a<c)
     mn=a;
     else if(b<a && b<c)
@@ -11,32 +11,18 @@ int main()
     else
     mn=c;
     
-    int y;
-    int x=a/2;
-    if(x<c)
-        y=x;
-    else{
-        y=c;
-    }
-  int mx;
-    if(x<b && x<c){
-      mx=x;
-    }
-    else if(b<x && b<c){
-        mx=b;
-    }
-    else
-    mx=c;
-
-    // printf("%d",min(y,min(mn,mx)));
-    if(y>mn && y>mx)
-    printf("%d",y);
-    else if(mn>y && mn>mx){
-        printf("%d",mn);
+    a-=mn;
+    b-=mn;
+    c-=mn;
+    long long int x=a/2;
+    long long int ans;
+    if(x<c){
+        ans=mn+x;
     }
     else{
-        printf("%d",mx);
+        ans=mn+c;
     }
+    printf("%lld",ans);
 
 
 
