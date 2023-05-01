@@ -11,6 +11,6 @@ int main()
 {
     int res=add(10,5);
     printf("%d\n",res);
-    printf("hi");
+    
 return 0;
 }
