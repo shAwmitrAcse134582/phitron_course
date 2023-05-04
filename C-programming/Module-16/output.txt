@@ -1,0 +1,4 @@
+main value before call function n=10
+Before sum 100 inside function n=10
+After sum 100 inside function n=110
+After function call n=110
