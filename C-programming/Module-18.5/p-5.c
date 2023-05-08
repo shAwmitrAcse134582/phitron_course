@@ -1,16 +1,10 @@
 #include<stdio.h>
-void rec(long long int a[],long long int n,long long int i, long long int sum){
- 
+long long rec(long long int a[],long long int n,long long int i){
     while(i==n){
-        return;
+        return 0;
     }
-     
-     
-     rec(a,n,i+1,sum+=a[i]);
-
-     printf("%lld ",sum);
-
-     
+     long long int sum= a[i] + rec(a,n,i+1);
+     return sum;    
 }
 int main()
 {
@@ -20,6 +14,7 @@ int main()
     for(long long int i=0;i<n;i++){
         scanf("%lld",&a[i]);
     }
-    rec(a,n,0,0);
+  long long int x =  rec(a,n,0);
+  printf("%lld",x);
 return 0;
 }
