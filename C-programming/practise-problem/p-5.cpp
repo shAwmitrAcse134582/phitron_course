@@ -13,15 +13,21 @@ ll a[n];
 for(ll i=0;i<n;i++){
     cin>>a[i];
 }
-int v;
-for(int i=n-1;i>=0;i--){
+for(int i=0;i<n;i++){
     if(a[i]==0){
-       v=i;
-       break;
+        int l=0;
+        int r=i-1;
+        while(l<r){
+            int tmp=a[l];
+            a[l]=a[r];
+            a[r]=tmp;
+             l++;
+              r--;
+        }
+       
     }
 }
-reverse(a,a+v);
-for(ll i=0;i<n;i++){
+for(int i=0;i<n;i++){
     cout<<a[i]<<" ";
 }
 get_out;

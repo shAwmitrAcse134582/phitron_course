@@ -6,24 +6,30 @@
 using namespace std;
 int main()
 {
+fast;
 ll n;
 cin>>n;
 ll a[n];
 for(ll i=0;i<n;i++){
     cin>>a[i];
 }
-
-ll c=0,d=0;
-for(ll i=0;i<n;i++){
-    for(ll j=0;j<n;j++){
-             if(a[i]+1 == a[j]){
-                    c++; 
-                    break; 
-                
-             }
-               
-    }
+ll l=0;
+ll r=n-1;
+if(n%2==0){
+while(l<=r){
+    cout<<a[l]<<" "<<a[r]<<" ";
+    l++;
+    r--;
 }
-    cout<<c<<endl;
+}
+else{
+    while(l<r){
+    cout<<a[l]<<" "<<a[r]<<" ";
+    l++;
+    r--;
+}
+cout<<a[n/2]<<endl;
+}
+
 get_out;
 }

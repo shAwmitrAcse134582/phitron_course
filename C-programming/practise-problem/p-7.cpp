@@ -6,24 +6,24 @@
 using namespace std;
 int main()
 {
+fast;
 ll n;
 cin>>n;
 ll a[n];
+ll mx=INT_MIN;
+ll c=0;
 for(ll i=0;i<n;i++){
     cin>>a[i];
-}
-
-ll c=0,d=0;
-for(ll i=0;i<n;i++){
-    for(ll j=0;j<n;j++){
-             if(a[i]+1 == a[j]){
-                    c++; 
-                    break; 
-                
-             }
-               
+    while(a[i]%2!=1){
+        a[i]=a[i]/2;
+        
+        c++;
+         
     }
+    mx=max(c,mx);
+    c=0;
+   
 }
-    cout<<c<<endl;
+cout<<mx<<endl;
 get_out;
 }
