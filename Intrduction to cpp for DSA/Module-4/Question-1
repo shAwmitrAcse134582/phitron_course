@@ -1,0 +1,306 @@
+//Answer to the question number-1(a)
+stack Memory:stack memory keeps data in compile time.It is a temporary storage
+memory.In stack memory, data can be directly accessed.the stack memory abide by the rules of LIFO principle.The problem of stack memory 
+is deletion process doesn't occur here.
+
+Heap Memory:It is known as dynamic memory.Dynamic memory keeps data in run time.
+It is very useful to delete  data.Dynamic memory provides memory as much as possible 
+as need & avoid memory related issues.It is very usable for memory management.It's only
+problem is data can't be directly accessed.
+
+Answer to the question number-1(b)
+Dynamic memory allocation allows efficient use of memory when it is needed.
+It is very useful for dynamic data structure.when large data structure work
+stack memory isn't used for its limited space.Dynamic memory allocation is highly
+used in memory management.It is very useful  in dynamic programming teacniques.
+
+Example of Dynamic memory allocation:
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+ class student{
+      public:
+      char name[100];
+      int roll;
+      int cls;
+      char section;
+
+      student(char n[100],int r,int c,char s){
+        strcpy(name,n);
+        roll=r;
+        cls=c;
+        section=s;
+      }
+ };
+
+int main()
+{
+fast;
+   char name[100]="shawmitra";
+ student *shawmitra =  new student(name,33,24,'a');
+
+ cout<<shawmitra->name<<endl;
+  delete shawmitra;
+ cout<<shawmitra->name<<endl;
+get_out;
+}
+
+Answer to the question number-1(c)
+dynamic array:-
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+int main()
+{
+fast;
+int n;
+cin>>n;
+int *ar=new int[n];
+for(int i=0;i<n;i++){
+    cin>>ar[i];
+}
+
+for(int i=0;i<n;i++){
+    cout<<ar[i]<<" ";
+}
+cout<<endl;
+
+delete[] ar;
+
+for(int i=0;i<n;i++){
+    cout<<ar[i]<<" ";
+}
+
+
+get_out;
+}
+//use of dynamic array
+1.Dynamic array can be resized.
+2. Dynamic arrays allocate memory only for 
+the elements you actually need.
+3.Deletion method is executed in dynamic array.
+4. Dynamic arrays can be easily passed as parameters
+ to functions by reference .
+5.Dynamic array allows return an array from another function.
+
+Answer to the question number 2(a)
+class:A class is a blue print of object.class is declared above 
+the main function.many of data types are  defined by the a class.
+class contain many types of data types.object are crearted under the class.
+object used class's data types and hold the value.
+ class Player{
+    char name[100];
+    int age,
+    float height,
+ };
+ here many types of data types contains by a single class.
+
+ object:An Object is an instance of a class.An object has state (data) and behavior (code).
+ Object is created inside the main function.Object data type is class name.For these reason
+ it can access class specified data types.
+ Declaration of obejct:
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+class student{
+    public:
+    char name[100];
+    int roll;
+    char section;
+    int cls;
+};
+int main()
+{
+fast;
+
+student s;
+//Here is the declaration of object.here student is class name and 
+// s is the object name.
+s.roll=1;
+s.cls=9;
+s.section='A';
+char nm[100]="shawmitra";
+strcpy(s.name,nm);
+ cout<<s.roll<<endl;
+get_out;
+}
+ 
+Answer to the question number 2(b)
+constructor:constructor is a type of function whose name is declared
+according to a class name.It is declared within a class.when object is created
+then constructor function is automatically called.There is no return type
+in constructor function.A class can not have more than one constructor function.
+
+Importance of constructor function:
+1.If there many objects in the main function,the value
+can be accessed easily be sending parameters to the constructor
+function.
+2.Constructor functions can be used for dependency injection.
+3.Constructor functions are vital for implementing inheritance in object-oriented 
+programming.
+4.It sets up the object with default or user-defined values, ensuring that the 
+object is in a valid and usable state when created.
+
+
+
+
+example:
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+ 
+ class student{
+      public:
+      char name[100];
+      int roll;
+      int cls;
+      char section;
+    student(char n[100],int r,int c,char s){
+        strcpy(name,n);
+        roll=r;
+        cls=c;
+        section=s;
+      }
+ };
+
+int main()
+{
+fast;
+    student shawmitra("Shawmitra",33,14,'A');
+    student ashik("ashik",32,13,'B');
+    cout<<shawmitra.name<<endl;
+    cout<<ashik.name<<endl;
+get_out;
+}
+
+Answer to the question number 2(c)
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+class Person{
+    public:
+    char name[100];
+    float height;
+    int age;
+    Person(char *n,float h,int a){
+        strcpy(name,n);
+        height=h;
+        age=a;
+    }
+
+};
+int main()
+{
+fast;
+Person *shawmitra=new Person("shawmitra",5.8,21);
+cout<<shawmitra->name<<endl;
+cout<<shawmitra->height<<endl;
+cout<<shawmitra->age<<endl;
+
+get_out;
+}
+
+Answer to the question no 3(a)
+The total size of all the data inside the object.
+The size of empty object in c++ is 1 byte.
+example:
+suppose a object has two integer data type and one 
+float data type.so here object data type are 12 bytes.
+
+Answer to the question no 3(b)
+Yes,I can return a static object from a function because
+returning object behave like as variable.here pass direct
+value not referrence.It follows rvo(return value optimization)
+method.
+
+example:
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+ class Player{
+      public:
+      char name[100];
+      int roll;
+      int cls;
+      char section;
+      Player(char n[100],int r,int c,char s){
+        strcpy(name,n);
+        roll=r;
+        cls=c;
+        section=s;
+      }
+ };
+ Player fun(){
+    char name[100]="shawmitra";
+   Player shawmitra(name,13,14,'A');
+   return shawmitra;
+ }
+int main()
+{
+fast;
+    Player shawmitra=fun();
+    cout<<shawmitra.name<<endl;
+    cout<<shawmitra.roll<<endl;
+get_out;
+}
+Answer to the question no 3(c)
+we need arrow sign(->) to access dynamic object.
+synatax:
+object_name->property
+In these way,we can access dynamic object
+
+Answer to the question no 3(d)
+#include<bits/stdc++.h>
+#define ll  long long int
+#define pb  push_back
+#define get_out return 0
+#define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+using namespace std;
+class Person{
+    public:
+    char name[100];
+    float height;
+    int age;
+    Person(char *n,float h,int a){
+        strcpy(name,n);
+        height=h;
+        age=a;
+    }
+
+};
+int main()
+{
+fast;
+Person *shawmitra=new Person("shawmitra",5.8,51);
+Person *ashik=new Person("ashik",5.8,23);
+
+int mx=max(shawmitra->age,ashik->age);
+if(mx==shawmitra->age)
+cout<<shawmitra->name<<endl;
+else
+cout<<ashik->name<<endl;
+
+get_out;
+}
+
+
+
+  
