@@ -4,20 +4,21 @@
 #define get_out return 0
 #define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 using namespace std;
-int *fun(){
-    int *a=new int[5];
-    // int a[5];
-    for(int i=0;i<5;i++){
-        cin>>a[i];
-    }
-    return a;
+int  *get_array(int n){
+ int *a = new int[n];
+ for(int i=0;i<n;i++){
+    cin>>a[i];
+ }
+ return a;
 }
 int main()
 {
 fast;
-int *a=fun();
-for(int i=0;i<5;i++){
- cout<<a[i]<<" ";
+ll t;
+cin>>t;
+int *ans= get_array(t);
+for(int i=0;i<t;i++){
+    cout<<ans[i]<<" ";
 }
 get_out;
 }

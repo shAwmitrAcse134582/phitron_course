@@ -4,20 +4,13 @@
 #define get_out return 0
 #define fast ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 using namespace std;
-int *fun(){
-    int *a=new int[5];
-    // int a[5];
-    for(int i=0;i<5;i++){
-        cin>>a[i];
-    }
-    return a;
-}
 int main()
 {
 fast;
-int *a=fun();
-for(int i=0;i<5;i++){
- cout<<a[i]<<" ";
-}
+ll a,b,c;
+cin>>a>>b>>c;
+ll mn=min(a,min(b,c));
+ll mx=max(a,max(b,c));
+cout<<mn<<" "<<mx<<endl;
 get_out;
 }

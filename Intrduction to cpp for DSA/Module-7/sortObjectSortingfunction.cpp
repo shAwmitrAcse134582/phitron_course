@@ -28,6 +28,7 @@ for(int i=0;i<3;i++){
     cin.ignore();
 
 }
+//sort function
    sort(a,a+3,cmp);
 
    for(int i=0;i<3;i++)

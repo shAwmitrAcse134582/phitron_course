@@ -26,11 +26,10 @@ int main()
 {
 fast;
     student shawmitra("Shawmitra",33,14,'A');
-
+    student ashik("ashik",32,13,'B');
     cout<<shawmitra.name<<endl;
-    cout<<shawmitra.roll<<endl;
-    cout<<shawmitra.cls<<endl;
-    cout<<shawmitra.section<<endl;
+    cout<<ashik.name<<endl;
+    
 
 get_out;
 }

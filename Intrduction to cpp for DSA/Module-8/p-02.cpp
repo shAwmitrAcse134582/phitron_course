@@ -9,20 +9,21 @@ int main()
 fast;
 string s;
 getline(cin,s);
-cin.ignore();
 stringstream ss(s);
-string line;
-int cnt=0;
-string name="john";
-while(ss>>line){
-   stringstream linestream(line);
-   string word;
-   while(linestream>> word){
-   if(word==name){
-    cnt++;
-   }
-   }
+string word;
+int ok=0;
+while(ss>>word)
+{
+    if(word=="Ratul"){
+        ok=1;
+        break;
+    }
 }
-cout<<cnt<<endl;
+if(ok==1){
+    cout<<"YES"<<endl;
+}
+else{
+    cout<<"NO"<<endl;
+}
 get_out;
 }
