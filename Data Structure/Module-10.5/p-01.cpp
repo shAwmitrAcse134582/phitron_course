@@ -36,6 +36,24 @@ void insert_data(Node *&head,Node *&tail, int val)
    newNode->prev=tail;
    tail=newNode;
 }
+int node_size1(Node *&head1){
+    Node *tmp=head1;
+    int cnt=0;
+    while(tmp!=NULL){
+         cnt++;
+         tmp=tmp->next;
+    }
+    return cnt;
+}
+int node_size2(Node *&head2){
+    Node *tmp=head2;
+    int cnt=0;
+    while(tmp!=NULL){
+         cnt++;
+         tmp=tmp->next;
+    }
+    return cnt;
+}
 int main()
 {
 fast;
@@ -72,7 +90,7 @@ while(true){
 bool ok=true;
 Node *tmp1=head1;
 Node *tmp2=head2;
-if(cnt1!=cnt2){
+if(node_size1(head1)!=node_size2(head2)){
     cout<<"NO"<<endl;
     return 0;
 }
