@@ -6,16 +6,18 @@
 using namespace std;
 const int N=1e3+5;
 vector<int>adj[N];
-bool depth[N];
+int depth[N];
 bool visited[N];
 
 void dfs(int u){
     visited[u]=true;
-    for(auto val: adj[u]){
-        if(visited[val]==true)
-            continue;
-         depth[val]=depth[u]+1;
+    for(auto val : adj[u]){
+        if(visited[val]==false){
+              //continue;    
+         depth[val] = depth[u] + 1;
              dfs(val);
+        }
+        
         
 
     }
@@ -37,9 +39,9 @@ for(int i=0;i<m;i++){
 }
 
 dfs(1);
-int val;
-cin>>val;
-cout<<"Depth of "<<val<<'='<<depth[val];
+int x;
+cin>>x;
+cout<<"Depth of "<<x<<'='<<depth[x];
 
 get_out;
 }

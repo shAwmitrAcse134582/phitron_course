@@ -2,26 +2,16 @@
 using namespace std;
 
 const int N = 1e5 + 7;
-
 vector<int> adj[N];
-
 int height[N];
-int visited[N];
-
-
-void dfs(int node)
+bool visited[N];
+void dfs(int u)
 {
-    visited[node] = 1;
-
-    for(auto n : adj[node])
-    {
-        if(visited[n] == 0)
-        {
-            dfs(n);
-
-            height[node] = max(height[node], height[n] + 1);
-        }
-        
+    visited[u]=true;
+    for(auto val:adj[u]){
+        if(visited[val])continue;
+        dfs(val);
+        height[u]=max(height[u],height[val]+1);
     }
 } 
 
