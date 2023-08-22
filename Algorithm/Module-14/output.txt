@@ -1,0 +1,5 @@
+disance of 1->0
+disance of 2->3
+disance of 3->2
+disance of 4->4
+disance of 5->5
