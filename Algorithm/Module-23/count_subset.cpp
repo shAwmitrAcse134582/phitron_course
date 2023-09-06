@@ -46,7 +46,7 @@ fast;
     {
         dp[0][i] = 0;
     }
-    for (int i=1;i<= n; i++)
+    for (int i=1; i <= n; i++)
     {
         for (int j = 0; j <= s; j++)
         {
