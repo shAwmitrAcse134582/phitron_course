@@ -1,3 +1,4 @@
+//No return type + No parameter
 #include<stdio.h>
 void add(){
     int x,y;
