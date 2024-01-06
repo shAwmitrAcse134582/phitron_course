@@ -1,0 +1,31 @@
+3(a):Difference between List and Dictionary of Python:
+1.List can store duplicate element but dictionary only store unique element.
+2.It can't construct key value pair but dictionary can construct key value pair.
+3.List is used [] bracket to store data but dictionary is used {} bracket to store data
+4.List maintains ordered to store data but dictionary don't follow any order to keep data
+5.List's index is integer data type but dictionary key can be any kind of data type
+6.List itself is a data structure but dictionary follows hashtable or hashmap
+
+3(b):Writing about *args and **kwargs of Python with proper examples in below
+*args:*args is used to receive many values as parameter.It is used single asterisk(*) behind the parameter
+to receive many variables.It is non keyword arguments.
+example:
+def func(*friuts):
+    for fruit in friuts:   
+     print(fruit) 
+
+fruits=func("apple","banana","orange","jackfruit")
+
+**kwargs: **kwargs is used to send data to function's parameter as a variable.It is also
+called keyword arguments because it works with key value pair.It is used double asterisk(**).
+To return many value,**kwargs is also used.Here,parameter sequence does not carry any problem.
+
+example:
+
+def full_name(first,last):
+    name=f'full name is : {first} {last}'
+    return name
+name=full_name(last='dwip',first='shawmitra')
+print(name)
+
+
