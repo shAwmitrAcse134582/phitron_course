@@ -5,6 +5,7 @@ class User():
         self.phone=phone
         self.emai=email
         self.address=address
+        self.due_amount=0
         
 class Customer(User):
     def __init__(self, name,phone,email,address,money) -> None:
@@ -21,6 +22,7 @@ class Customer(User):
     
     def place_order(self,order):
         self.order=order
+        self.bill_due=order.bill
         print(f'{self.name} place an order {order.items}')
 
     def eat_food(self,order):
@@ -46,7 +48,7 @@ class Employee(User):
         self.due = 0
 
 
-class chef(Employee):
+class Chef(Employee):
     def __init__(self, name, phone, email, address, salary, starting_date, department,cooking_item) -> None:
         super().__init__(name, phone, email, address, salary, starting_date, department)
         self.cooking_item=cooking_item
