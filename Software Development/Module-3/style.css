@@ -1,0 +1,10 @@
+.logo{
+    height: 30px;
+}
+.logo img{
+    height: 25px;
+}
+.menu li{
+    color: white;
+    font-weight: 700;
+}
