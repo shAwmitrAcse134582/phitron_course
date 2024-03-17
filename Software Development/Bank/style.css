@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: grey;
+}
+
+.amount-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.design{
+    padding: 20px;
+    border: 1px solid gray;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: bold;
+    
+}
+.deposit{
+    background-color: rgb(145, 217, 28);
+    color: white;
+}
+.withdraw{
+    background-color: rgb(214, 188, 58);
+    color: white;
+}
+
+.total{
+    background-color: orange;
+    color: white;
+}
+
+.deposit-withdraw-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.deposit-withdraw-container input{
+    padding: 5px;
+
+}
+.deposit-withdraw-container button{
+    padding: 5px;
+    border-radius: 5px;
+}
+

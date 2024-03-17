@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="amount-container">
+        <div class="deposit design">
+               <h2>Deposit</h2> 
+               <h3 id="deposit-field">00</h3>
+        </div>
+        <div class="withdraw design">
+            <h2>Withdraw</h2>
+            <h3 id="withdraw-amount">00</h3>
+           
+        </div>
+        <div class="total design">
+            <h2>Total</h2>
+            <h3 id="total-amount">00</h3>
+        </div>
+    </div>
+
+    <div class="deposit-withdraw-container">
+        <div class="deposit-box">
+            <input type="number" id="deposit-amount">
+            <button onclick="deposit()">Deposit</button>
+
+        </div>
+
+        <div class="withdraw-box">
+            <input type="number" id="withdraw-input">
+            <button onclick="withdraw()">Withdraw</button>
+
+
+        </div>
+    </div>
+    
+
+    <script src="./app.js"></script>
+</body>
+</html>
