@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Qustions</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      body{
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-2xl rounded-se-2xl rounded-es-2xl w-[90%] lg:w-[40%] my-7 p-7 mx-auto font-semibold italic text-fuchsia-600  border-4  border-orange-500">Answers of the blog questions are given below:</h1>
+    </header>
+    <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" /> 
+        <div class="collapse-title text-xl font-medium text-orange-700">
+           Ques_1: Discuss the scope of var, let and const.
+        </div>
+        <div class="collapse-content"> 
+          <p class="text-lg font-medium text-green-600">Answer:</p>
+          <p><span class="font-medium">Var:</span> The region in which these variables can be utilized is referred to as the scope. Function/locally, globally, or both can be the scope of a var declaration.The scope is global when a var variable is declared outside of a function. This implies that any variable declared using the var keyword outside of a function block is available across the whole window.A variable has function scope when it is declared inside of a function. This suggests that it is open to use and restricted to that purpose.</p><br>
+          <p><span class="font-medium">Let:</span> Let is a block scope. A block is a section of code that is bordered by. Furthermore, a variable declared in a block using the "let" keyword is only used inside that block.</p><br>
+          <P><span class="font-medium">Const: </span> The scope of a variable declared with the const keyword is constrained to the block (a function or a block), just as the scope of let declarations. The primary distinction is that they are immutable, i.e., their value doesn't change inside the scope despite updates or re-declarations.</P>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" /> 
+        <div class="collapse-title text-xl font-medium text-orange-700">
+          Ques_2: Tell us the use cases of null and undefined.
+        </div>
+        <div class="collapse-content"> 
+            <p class="text-lg font-medium text-green-600">Answer:</p>
+            <p><span class="font-medium">Undefined: </span>A variable's value will be undefined if it is declared but has not yet been given a value.</p>
+
+          <p class="font-medium">Use cases of undefined:</p>
+           <ul class="list-disc ml-7">
+            <li>When defining a funtion with parametres but not passing value for a parametre,it's automatically undefined</li>
+            <li>If any variable is decalred without an initial value will beundefined</li>
+            <li>Accesing object property that doesn't exist</li>
+           </ul>
+           <p><span class="font-medium">Null: </span>Null is a special value that stands in for an empty or unknown value in JavaScript.</p>
+           <p class="font-medium">Use cases of null:</p>
+           <ul class="list-disc ml-7">
+            <li>A variable that has no value can be identified as null.</li>
+            <li>Can be reassigned with any value that was at first initialized with null. </li>
+            <li>Sometimes function returns null to indicate that they don't succeed in their operation.</li>
+           </ul>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" /> 
+        <div class="collapse-title text-xl font-medium text-orange-700">
+          Ques_3: What do you mean by REST API?
+        </div>
+        <div class="collapse-content"> 
+            <p class="text-lg font-medium text-green-600">Answer:</p>
+            <p>Since application programming interfaces (APIs) exist in a variety of forms and sizes, it can be challenging for beginners to comprehend what they are and how to utilize them.There are many types of API in which REST API is one of the most used.</p>
+            <p>Web APIs are developed using the Representational State Transfer (REST) software architecture style. Because they may be used to make data, information, algorithms, media, and other digital resources accessible through web URLs, REST APIs offer straightforward, consistent interfaces. REST APIs are essentially the ones that are utilized the most on the web nowadays.</p>
+            <p>There are six guiding restrictions that must be met for the API service to be RESTful:</p>
+            <ul class="font-medium list-disc ml-7">
+              <li>Use of a uniform interface</li>
+              <li>Stateless operations</li>
+              <li>Client-server based</li>
+              <li>RESTful resource caching</li>
+              <li>Code on demand</li>
+              <li>Layerd system</li>
+            </ul>
+
+        </div>
+      </div>
+      <div class="my-7 border-2 w-[30%] md:w-[20%] lg:w-[10%] text-center bg-slate-300 hover:border-black mx-auto">
+        <a class="hover:text-blue-600 hover:font-extrabold " title="Click here to go back to index page" href="./index.html">Back to Index</a>
+      </div>
+</body>
+</html>
