@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.search-box{
+    padding:50px;
+    text-align: center;
+
+}
+.search-input{
+    padding: 20px 30px;
+   
+}
+
+#search-btn{
+    padding: 20px 30px;
+    border: none;
+    background-color: chocolate;
+    color: white;
+    
+}
