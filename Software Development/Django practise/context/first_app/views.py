@@ -1,9 +1,11 @@
 from django.shortcuts import render
+import datetime
 
 def home(request):
     d={'author':'shawmitra',
        'age':24,
-       'lst':[1,2,3],
+       'lst':['python','database','django'],
+       'birthday' : datetime.datetime.now(),
        'courses':[
            
            {
