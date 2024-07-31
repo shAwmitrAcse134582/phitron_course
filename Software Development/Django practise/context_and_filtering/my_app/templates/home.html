@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <!-- for loop statement -->
+    {% for item in data %}
+        <h3>ID:>{{ item.id }} </h3>
+        <h3>UserID:>{{item.userId}}</h3>
+        <h3>Title:>{{item.title}}</h3>
+        <p>body:>{{ item.body }}</p>
+    {% endfor %}
+
+    <!-- django filtering -->
+  <h1>length: {{ data | length }}</h1>
+    
+</body>
+</html>
