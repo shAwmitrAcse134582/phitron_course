@@ -81,7 +81,7 @@ class Account:
              print('sorry!!Account Number is not found.please provide valid account number!!')
              
     def takeLoan(self, ac_number, amount):
-        if self.loanStatus == True:
+        if self.loanStatus == 1:
             if ac_number in self.accounts:
                 if self.accounts[ac_number]['loan'] < 2:
                     self.total_loan += amount

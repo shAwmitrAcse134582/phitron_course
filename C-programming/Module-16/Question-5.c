@@ -22,9 +22,7 @@ int is_palindrome(char s[]){
     else{
         return 1;
     }
-    
-
-   
+       
 }
 
 int main()

@@ -1,13 +1,19 @@
 #include<stdio.h>
-void rec(int i){
-    if(i>5){//base case
+void rec(int n){
+    
+  
+   printf("%d ",n);
+    while(n==2){
         return;
     }
-    printf("%d\n",i);
-    rec(i+1);
+    rec(n-1);
+   
 }
 int main()
 {
-    rec(1);
+    int n;
+    scanf("%d",&n);
+   rec(n);
+   printf("1");
 return 0;
 }

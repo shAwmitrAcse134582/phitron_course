@@ -41,7 +41,7 @@ def main():
                         ok=int(input('Enter 0 for off loan system: '))
                         bank.loanControl(ok)
                     elif(ch==7):
-                        ok=int(input('Enter 0 for declare bank as Bankrupt : '))
+                        ok=int(input('Enter 1 for declare bank as Bankrupt : '))
                         bank.checkBankrupt(ok)
                     elif(ch==8):
                         break
@@ -85,8 +85,8 @@ def main():
                             Account_Number=int(input('Enter Account Number : '))
                             bank.available_balance(Account_Number)
                         elif(ch==4):
-                             Account_Number1=int(input('Enter Account Number : '))
-                             Account_Number2=int(input('Enter Account Number : '))
+                             Account_Number1=int(input('Enter sender Account Number : '))
+                             Account_Number2=int(input('Enter Receiver Account Number : '))
                              amount=int(input('Amount : '))
                              bank.transfer_balance(Account_Number1,Account_Number2,amount)
                         elif(ch==5):

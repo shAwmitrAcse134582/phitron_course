@@ -1,0 +1,117 @@
+1.difference between primary key and composite key:
+Primary key:When a unique value is used to identify a tuple in a table that is called primary key.
+Primary key can't be null and it must be unique.
+
+Composite key:When two or multiple value is used to identify a tuple that is called composite key.
+In composite key two or more column is needed
+
+2.Difference between using join query or not using join query:
+without join query:Without join query we use conditional statement between two table common column to
+build relationship.It is less efficient and more time complexiety.
+
+example:
+	SELECT s.student_id, s.name, l.book
+    FROM student s, library l
+	WHERE s.student_id = l.student_id;
+  
+
+using join query:Here we build relationship between two table using join keyword and 
+as a condition we use ON keyword.It is more efficient and less time complexiety than  without
+join query.
+
+example:
+   SELECT s.student_id, s.name, l.book
+   FROM student s JOIN library l 
+   ON s.student_id = l.student_id;
+
+3.Create employee and department table following those instruction
+
+  CREATE DATABASE University;
+  
+  CREATE TABLE Department(
+  dept_id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    dept_name varchar(50) NOT NULL
+ );
+ 
+ 
+ CREATE TABLE employee(
+  First_Name varchar(50) NOT NULL,
+  Last_Name varchar(50) NOT NULL,
+  DOB Date Not NULL,
+  Dept_id int,
+  FOREIGN key (dept_id) REFERENCES Department(dept_id),
+  salary int CHECK(salary>0)
+  );
+  
+Insert INTO department(dept_id,dept_name)
+VALUES(' ','CSE'),
+      (' ','EEE');
+	  
+INSERT INTO employee(First_Name,Last_Name,Dob,dept_id,salary)
+VALUES("Shawmitra","Das",'2002-06-06',1,450000)
+
+4.Write SQL Query to get the second max salary
+	SELECT DISTINCT salary
+	FROM employees
+	ORDER by salary DESC
+	LIMIT 1
+	OFFSET 1
+
+5.Write SQL Query to show  the department names and the average salary of the departments.
+SELECT d.department_name,AVG(salary) AS Avarage_salary
+from departments d JOIN employees e
+ON d.department_id=e.department_id
+GROUP BY d.department_name
+
+6. Illustrate the INNER, LEFT, RIGHT, SELF Joins
+ 
+ Inner joins:Inner joins is only common element between two tables
+   
+   
+ Left joins:common and left table elements will be the output
+ 
+ 
+ Right joins:common and write table elements will be the output
+ 
+ 
+ self joins:A self join in SQL is when a table is joined with itself.
+ 
+ 
+7.What is a subquery? Write with an example
+
+A subquery is query under a query.It is a nested query within another query.
+example:
+  select max(salary)
+  from employees
+  where salary<(
+              select max(salary)
+			  from employees
+              );
+8.Show the names of the employees who get less salary than Steven
+SELECT first_name,last_name
+FROM employees
+WHERE salary<(SELECT salary
+              FROM employees
+              WHERE first_name='Steven'
+              LIMIT 1);
+	
+9.Count the number of employees of each job type
+SELECT j.job_title as JOB_TYPE , COUNT(e.employee_id) AS Employee_Number
+FROM employees e JOIN jobs j
+ON e.job_id = j.job_id
+GROUP BY JOB_TYPE ;
+
+10.Show the names of Departments which doesn’t have any employees
+SELECT d.department_name
+FROM departments d LEFT JOIN employees e
+ON d.department_id = e.employee_id
+WHERE e.employee_id IS NULL;
+ 
+
+
+
+
+
+
+
+

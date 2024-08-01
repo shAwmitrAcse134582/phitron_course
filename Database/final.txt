@@ -1,0 +1,87 @@
+
+
+2.insert into borrowing(StudentID, ISBN, BorrowDate, DueDate, ReturnDate)
+select 3, ISBN, curdate(), '2024-02-08', '2024-02-08'
+from book
+order by AvailableCopies desc
+limit 1;
+
+3.update book
+set AvailableCopies = AvailableCopies - 1
+where ISBN = (select ISBN from borrowing order by BorrowID desc limit 1);
+
+4.
+select st.StudentID,st.name
+from student as st join borrowing as br
+on st.StudentID = br.StudentID
+group by st.name
+having count(*) =
+(
+    select max(cntmaxborrow)
+    from (
+        select count(*) as cntmaxborrow
+        from borrowing
+        group by StudentID
+    ) as maximumBorrow
+)
+
+5.
+select b.ISBN,b.Title
+from book as b join Borrowing as br
+on b.ISBN = br.ISBN
+where curdate() > br.ReturnDate;
+
+7.
+UNION and UNION ALL both operators is used to combine the two set result.
+
+Basic difference is IN  UNION operation ,there have no duplicate value in result
+,But UNION ALL operation ,there may have duplicate value.
+
+UNION ALL operation  is faster than UNION operation because
+it does not perform extra operation to remove duplicate.
+
+Note:The columns selected by each SELECT statement must be of the same
+data type and in the same order.
+
+8.
+SELECT DISTINCT Salary AS second_lowest_salary
+FROM employees
+ORDER by salary ASC
+LIMIT 1
+OFFSET 1
+
+9.
+CREATE TABLE Department(
+    Dept_id int PRIMARY KEY AUTO_INCREMENT,
+    Dept_Name varchar(100),
+    location varchar(50)
+    
+    );
+
+9(a).
+CREATE TABLE JobHistory(
+ job_name varchar(50) PRIMARY KEY,
+ job_type varchar(50),
+ joining_date date,
+   emp_id int,
+ FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE
+  );
+
+9(b).
+CREATE TABLE Employee(
+ emp_id int PRIMARY KEY,
+ emp_name varchar(100),
+ phone_number varchar(20),
+ Dept_id int,
+ FOREIGN KEY(Dept_id) REFERENCES department(Dept_id) on DELETE SET NULL 
+  );
+
+10.
+ERD is my most important topic in this course.
+
+ERD stands for Entity-Relationship Diagram. It's a visual representation used
+in database design to describe the relationships between different entities in a system.
+ERDs are valuable tools for database designers and developers.
+
+I found interesting in ERD because through the ERD I can get an overview in the full database
+and can implement the database easily. 

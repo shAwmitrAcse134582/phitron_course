@@ -38,7 +38,7 @@ for(ll i=0;i<m;i++){
     adj[v].push_back(u);
 }
 bfs(1);
-if(level[n]<1){
+if(!visited[n]){
     cout<<"IMPOSSIBLE"<<endl;
 }
 cout<<level[n]+1<<endl;
