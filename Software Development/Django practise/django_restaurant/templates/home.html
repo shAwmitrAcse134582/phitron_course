@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Welcome to My Website</h1>
+            <p>Welcome to [Your Restaurant Name], where culinary excellence meets a cozy ambiance. Nestled in the heart of the city, our restaurant is a haven for food enthusiasts seeking an unforgettable dining experience. Our chefs craft each dish with passion, using only the freshest ingredients sourced from local farms.
+
+                At [Your Restaurant Name], we pride ourselves on a diverse menu that caters to all tastes. From mouth-watering appetizers to delectable main courses and indulgent desserts, our offerings are designed to delight your palate. Whether you crave traditional cuisine or adventurous new flavors, we have something special for you.
+                
+                Join us for a romantic dinner, a family celebration, or a casual meal with friends. Our friendly staff is dedicated to providing exceptional service, ensuring that your visit is nothing short of perfect. Enjoy our carefully curated wine list, featuring selections that pair perfectly with our dishes.
+                
+                Experience the warm and welcoming atmosphere that makes [Your Restaurant Name] a favorite destination for both locals and visitors alike. We look forward to serving you and making your dining experience memorable. Come and savor the flavors of [Your Restaurant Name] – where every meal is a celebration.
+                
+                </p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/1.jpg' %}" alt="Sample Image" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        background-color: #f8f9fa; /* Light gray background for container */
+    }
+    h1 {
+        color: #343a40; /* Dark gray color for heading */
+    }
+    p {
+        color: #6c757d; /* Gray color for paragraph */
+    }
+    .img-fluid {
+    border: 2px solid #343a40; /* Border for image */
+    border-radius: 50%; /* Make the image circular */
+}
+</style>
+{% endblock %}
