@@ -1,11 +1,12 @@
 
 
 
+
 from django.urls import path
 from .import views
 
 urlpatterns = [
  
-    path('index/',views.meal,name='meal'),
+    path('about/',views.about,name='about'),
     
 ]
