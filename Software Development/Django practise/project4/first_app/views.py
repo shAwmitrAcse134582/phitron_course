@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
 def index(request):
     data = [
         {
@@ -36,5 +35,16 @@ def index(request):
     ]
     return render(request, 'index.html', {'data': data})
 
-def about(request,id):
-    return render(request, 'index.html',{'id' : id})
+def about(request, id):
+    return render(request, 'index.html', {'id': id})
+
+def form(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        useremail = request.POST.get('useremail')
+        submitted_data = {
+            'username': username,
+            'useremail': useremail,
+        }
+        return render(request, 'form.html', {'submitted_data': submitted_data})
+    return render(request, 'form.html')
