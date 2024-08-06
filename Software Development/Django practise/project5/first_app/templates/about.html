@@ -2,7 +2,15 @@
 
 {% block content %}
 <h1>this is about page</h1>
+{% if sub_data %}
+<div class="mt-5">
+    <h3>Submitted Data:</h3>
+    <p><strong>Name:</strong> {{ sub_data.name }}</p>
+    <p><strong>Email:</strong> {{ sub_data.email }}</p>
+    <p><strong>ratings:</strong> {{ sub_data.select }}</p>
+</div>
 
+{% endif %}
 
 {% endblock %}
 
