@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from . form import contactForm
 
 # Create your views here.
 def home(request):
@@ -14,9 +15,22 @@ def about(request):
         sub_data = {
             'name': name,
             'email': email,
-            'select':select,
+            'select': select,
         }
     return render(request, 'about.html', {'sub_data': sub_data})
 
-def form(request):
+def form_view(request):
     return render(request, 'form.html')
+
+def DjangoForm(request):
+    if request.method == 'POST':
+        form = contactForm(request.POST)
+        if form.is_valid():
+            # Process the form data here
+            return render(request, 'form_success.html', {'form': form.cleaned_data})
+        else:
+            print(form.errors)  # Print the errors if the form is invalid
+    else:
+        form = contactForm()
+    
+    return render(request, 'django_form.html', {'form': form})
