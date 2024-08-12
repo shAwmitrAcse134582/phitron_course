@@ -23,14 +23,17 @@ def form_view(request):
     return render(request, 'form.html')
 
 def DjangoForm(request):
-    if request.method == 'POST':
-        form = contactForm(request.POST)
-        if form.is_valid():
-            # Process the form data here
-            return render(request, 'form_success.html', {'form': form.cleaned_data})
+        if request.method == 'POST':
+            form = contactForm(request.POST,request.FILES)
+            if form.is_valid():
+                file = form.cleaned_data['file']
+                with open('./first_app/upload/'+ file.name,'wb+') as destination:
+                     for chunk in file.chunks():
+                          destination.write(chunk)
+                     
+                print(form.cleaned_data)
+                return render(request, 'django_form.html', {'form': form})
         else:
-            print(form.errors)  # Print the errors if the form is invalid
-    else:
-        form = contactForm()
-    
-    return render(request, 'django_form.html', {'form': form})
+            form=contactForm()
+        
+        return render(request, 'django_form.html', {'form': form})
