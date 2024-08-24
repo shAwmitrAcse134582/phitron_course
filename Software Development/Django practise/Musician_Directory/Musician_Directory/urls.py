@@ -6,6 +6,6 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='homepage'),
-    path('add/',include('musician.urls')),
-    path('add/',include('album.urls'))
+    path('musician/',include('musician.urls')),
+    path('album/',include('album.urls'))
 ]
