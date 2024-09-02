@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django import forms
 
 class RegisterFrom(UserCreationForm):
@@ -10,4 +10,11 @@ class RegisterFrom(UserCreationForm):
         model=User
         # fields='__all__'
        
+        fields=['username','first_name','last_name','email']
+
+class ChangeUserData(UserChangeForm):
+    password=None
+    class Meta:
+        model=User
+      #   fields='__all__'
         fields=['username','first_name','last_name','email']
