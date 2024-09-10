@@ -1,36 +1,100 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<div class="d-flex flex-wrap justify-content-center p-5 pt-5">
+<div class="d-flex flex-wrap px-5 pt-3 align-items-center">
+
+   <div class="col-6 ">
+    <h1>Welcome to Django blog</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsum quaerat temporibus optio iure porro nulla modi at quas excepturi 
+      exercitationem placeat, perferendis dolor maxime ipsa sed ipsam nemo 
+      maiores? Perferendis expedita distinctio, culpa recusandae reiciendis dolor saepe illo ducimus quo voluptas at fugiat nobis nesciunt consequatur commodi necessitatibus quae, eum nihil facere, velit iusto doloribus!
+       Quasi odio officiis, expedita repudiandae corrupti a dicta nostrum veniam, error earum fugit autem repellendus ad rerum in et tempora voluptas sapiente reprehenderit nobis eveniet similique! Facilis ab aperiam, amet possimus velit magni! Illum facilis laborum amet consequuntur officia aut neque repellendus magni vitae.</p>
+
+   </div>
+
+  <div class="col-6">
     
-    {% for post in data %}
+    <img src="{% static 'blog.avif' %}" alt="">
+     
+  </div>
 
-    <div class="col-sm-6">
-        <div class="card  mx-2">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.content }}</p>
-            <p>Author : {{post.author.name}}</p>
-            <p>category: 
-
-            {% for cat in post.category.all %}
-                <button class='btn btn-warning btn-sm m-2'> {{cat.name}}</button>
-                 
-            {% endfor %}
-
-            </p>
-
-            <a href="{% url 'edit_post' post.id%}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'delete_post' post.id%}" class="btn btn-danger">Delete</a>
-           
-          </div>
-        </div>
-      </div>
-      
-
-    {% endfor %}
-   
 </div>
+
+
+<div class="d-flex flex-wrap p-4">
+  <div class="col-2 bg-white p-3">
+    <h3>All categories</h3>
+   
+    {% for cat in category %}   
+
+    <div class="form-check">
+       <input class="form-check-input" type="radio" name="category" id="{{cat.id}}">
+      <label class="form-check-label" for="{{cat.id}}">
+        
+        <a class="text-decoration-none" href="{% url 'category_wise_post' cat.slug %}">{{cat.name}}</a>
+      </label>
+    </div>
+     {% endfor %}
+  
+
+  </div>
+
+
+  <div class="col-10 p-4">
+
+    <div class="d-flex flex-wrap  p-5 pt-5">
+    
+      {% for post in data %}
+  
+      <div class="col-sm-6 pt-4">
+          <div class="card  mx-2">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.content }}</p>
+              <p>Author : {{post.author.first_name}} {{post.author.last_name}}</p>
+              <p>category: 
+  
+              {% for cat in post.category.all %}
+                  <button class='btn btn-warning btn-sm m-2'> {{cat.name}}</button>
+                   
+              {% endfor %}
+  
+              </p>
+  
+              {% comment %} <a href="{% url 'edit_post' post.id%}" class="btn btn-primary">Edit</a>
+              <a href="{% url 'delete_post' post.id%}" class="btn btn-danger">Delete</a> {% endcomment %}
+             
+            </div>
+                </div>
+
+   
+          </div>
+      
+        
+  
+      {% endfor %}
+     
+
+
+
+
+</div>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+ 
 
 {% endblock %}
