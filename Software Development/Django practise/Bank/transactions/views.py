@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView,ListView
@@ -6,6 +7,8 @@ from transactions.models import Transactions
 from django.contrib import messages
 from transactions.constants import DEPOSIT,WITHDRAWAL,LOAN,LOAN_PAID
 from django.http import HttpResponse
+from django.db import Sum
+
 
 from transactions.forms import(
     DepositForm,
@@ -103,3 +106,42 @@ class LoanRequestView(TransactionCreateMixin):
         )
 
         return super().form_valid(form)
+
+class TransactionReportView(LoginRequiredMixin,ListView):
+    template_name='transactions/transaction_report.html'
+    model=Transactions
+    balance=0
+
+    def get_queryset(self):
+        queryset=super().get_queryset().filter(
+            account=self.request.user.account
+        )
+    
+        start_date_str=self.request.GET.get('start_date')
+        end_date_str=self.request.GET.get('end_date')
+
+        if start_date_str and end_date_str:
+            start_date = datetime.strptime(start_date_str, '%Y-%m-%d').date()
+            end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
+
+            queryset=queryset.filter(timestamp__date__gte=start_date,timestamp__date__lte=end_date)
+            self.balance=Transactions.objects.filter(
+                timestamp__date__gte=start_date,timestamp__date__lte=end_date
+            ).aaggregate(Sum('amount'))['amount__sum']
+        
+        else:
+            self.balance=self.request.user.account.balance
+        
+        return queryset.distinct()
+
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        context.update({
+
+            'account':self.request.user.account
+        })
+        return context
+
+
+
+
