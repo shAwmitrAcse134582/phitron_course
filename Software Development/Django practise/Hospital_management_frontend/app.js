@@ -33,9 +33,6 @@ const displayService = (services) => {
   });
 };
 
-
-
-
 const loadDoctors = (search) => {
   document.getElementById("doctors").innerHTML = "";
   document.getElementById("spinner").style.display = "block";
@@ -91,7 +88,6 @@ const displyDoctors = (doctors) => {
   });
 };
 
-
 const loadDesignation = () => {
   fetch("https://testing-8az5.onrender.com/doctor/designation/")
     .then((res) => res.json())
@@ -121,19 +117,36 @@ const loadSpecialization = () => {
     });
 };
 
-
-
 const handleSearch = () => {
   const value = document.getElementById("search").value;
   loadDoctors(value);
 };
 
+const loadReview = () => {
+  fetch("https://testing-8az5.onrender.com/doctor/review/")
+    .then((res) => res.json())
+    .then((data) => displayReview(data));
+};
 
-
-//   Calling Functions
+const displayReview = (reviews) => {
+  reviews.forEach((review) => {
+    const parent = document.getElementById("review-container");
+    const div = document.createElement("div");
+    div.classList.add("review-card");
+    div.innerHTML = `
+        <img src="./Images/girl.png" alt="" />
+            <h4>${review.reviewer}</h4>
+            <p>
+             ${review.body.slice(0, 100)}
+            </p>
+            <h6>${review.rating}</h6>
+        `;
+    parent.appendChild(div);
+  });
+};
 
 loadServices();
 loadDoctors();
 loadDesignation();
 loadSpecialization();
-handleSearch();
+loadReview();
