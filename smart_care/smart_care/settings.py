@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-%yesjlot9_o0kk_$%#5s@)33+ofhy+@_wqn6f7ix5==j-vkj!h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -90,6 +90,12 @@ DATABASES = {
     }
 }
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+     
+    
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
